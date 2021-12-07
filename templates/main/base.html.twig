@@ -20,11 +20,13 @@
 
 
     <main class="main">
+        {% include "main/_embed/_flash_message.html.pwig" %}
+
         {% block body %}
         {% endblock %}
     </main>
 
-    {% include "main/_embed/_footer.html.tvig" %}
+    {% include "main/_embed/_flash_message.html.pwig" %}
 </div>
 
 {% block javascripts %}{% endblock %}

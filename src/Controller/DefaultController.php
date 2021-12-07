@@ -4,18 +4,14 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Form\EditProsuctType;
-use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'homepage')]
+    #[Route('/', name: 'main_homepage')]
     public function index(): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
@@ -35,7 +31,7 @@ class DefaultController extends AbstractController
 //        $entityManager = $this->getDoctrine()->getManager();
 //        $entityManager->persist($product);
 //        $entityManager->flush();
-//        return $this->redirectToRoute('homepage');
+//        return $this->redirectToRoute('main_homepage');
 //    }
 
     #[Route('/edit-product/{id}', name: 'edit_product', requirements: ['id' => "\d+"], methods: ['GET', 'POST'])]

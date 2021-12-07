@@ -43,6 +43,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $isVerified = false;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $full_Name;
+
+    /**
+     * @ORM\Column(type="string", length=20, nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $address;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $zipcode;
+
+    /**
+     * @ORM\Column(type="boolean" , nullable=true)
+     */
+    private $isDeleted;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -140,6 +165,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getfull_name(): ?string
+    {
+        return $this->full_Name;
+    }
+
+    public function setfull_name(?string $full_Name): self
+    {
+        $this->full_Name = $full_Name;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getzipcode(): ?string
+    {
+        return $this->zipcode;
+    }
+
+    public function setzipcode(?string $zipcode): self
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    public function getIsDeleted(): ?bool
+    {
+        return $this->isDeleted;
+    }
+
+    public function setIsDeleted(bool $isDeleted): self
+    {
+        $this->isDeleted = $isDeleted;
 
         return $this;
     }
