@@ -46,7 +46,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $full_Name;
+    private $fullName;
 
     /**
      * @ORM\Column(type="string", length=20, nullable=true)
@@ -169,14 +169,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getfull_name(): ?string
+    public function getFullName(): ?string
     {
-        return $this->full_Name;
+        return $this->fullName;
     }
 
-    public function setfull_name(?string $full_Name): self
+    public function setFullName(?string $fullName): self
     {
-        $this->full_Name = $full_Name;
+        $this->fullName = $fullName;
 
         return $this;
     }
